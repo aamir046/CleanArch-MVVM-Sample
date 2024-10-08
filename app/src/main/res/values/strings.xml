@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Liberte</string>
+
+    <!--empty state-->
+    <string name="empty_screen">No Record found</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="next">Next</string>
+    <string name="free_cap">FREE\nLife Insurance</string>
+    <string name="life_insurance">Life Insurance</string>
+    <string name="intro_descr1">Unless you\'re Immortal, You need a Life Insurance!</string>
+    <string name="liberte_play_earn">Liberte\nPlay &amp; Earn</string>
+    <string name="intro_descr2">PLAY = EARN , Can You Believe?</string>
+    <string name="liberte_walk_to_earn">Liberte\nWalk to earn</string>
+    <string name="intro_descr3">You Walk , We Pay!</string>
+    <string name="liberte_freelance">Liberte\nFreelance</string>
+    <string name="intro_descr4">First Learn then remove \"L\"</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_and_conditions">To continue, you must agree our <b>Terms of Conditions</b></string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in_now">Sign in Now</string>
+    <string name="sign_in">Sign in</string>
+    <string name="enter_phone_number_starts_with">Enter phone number starts with country code</string>
+    <string name="remember_me">Remember me</string>
+    <string name="referral">Referral</string>
+    <string name="referral_code">Referral code</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_with">Log in with</string>
+    <string name="sign_up_now">Sign up Now</string>
+    <string name="otp">OTP</string>
+    <string name="_4_digit_code_on_e_time_password_has_been_sent_your">4 digit code (On e Time Password) has been sent to your register mobile number</string>
+    <string name="resend">Don’t Get Code? <b>Resend</b></string>
+    <string name="back_to_signup">Back to <b>Signup</b></string>
+    <string name="verify_now">Verify Now</string>
+
+</resources>

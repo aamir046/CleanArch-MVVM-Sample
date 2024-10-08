@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mvvmclean.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/to_topHeadLinesFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/topHeadLinesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/topHeadLinesFragment"
+        android:name="com.example.mvvmclean.ui.headlines.TopHeadLinesFragment"
+        android:label="fragment_topHeadLinesFragment"
+        tools:layout="@layout/fragment_headlines">
+
+        <action
+            android:id="@+id/to_headlinesDetailsFragment"
+            app:destination="@id/headlinesDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/headlinesDetailsFragment"
+        android:name="com.example.mvvmclean.ui.headlinedetails.HeadLineDetailsFragment"
+        android:label="fragment_headline_details"
+        tools:layout="@layout/fragment_headline_details">
+
+        <argument
+            android:name="headline"
+            app:argType="com.example.mvvmclean.domain.model.mainmodels.TopHeadlines" />
+
+    </fragment>
+
+</navigation>
