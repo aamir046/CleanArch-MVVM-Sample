@@ -1,6 +1,9 @@
 package com.example.mvvmclean.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -9,6 +12,7 @@ import com.example.mvvmclean.R
 import com.example.mvvmclean.base.BaseFragment
 import com.example.mvvmclean.base.NavigationCommand
 import com.example.mvvmclean.databinding.FragmentSplashBinding
+import com.example.mvvmclean.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -32,30 +36,19 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashVM>(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lifecycleScope.launch {
+        Handler(Looper.getMainLooper()).postDelayed({
             navigateToTargetScreen()
-        }
+        }, 2000)
     }
 
-    private suspend fun navigateToTargetScreen(){
+    private fun navigateToTargetScreen(){
 
-        withContext(Dispatchers.IO){
-            delay(2000)
-        }
-
-//        if(!viewModel.isFirstTimeLogin){
-//            navigate(
-//                NavigationCommand.To(
-//                    SplashFragmentDirections.toIntroFragment()
-//                )
-//            )
-//        }else{
-            navigate(
-                NavigationCommand.To(
-                    SplashFragmentDirections.toTopHeadLinesFragment()
-                )
+        navigate(
+            NavigationCommand.To(
+                SplashFragmentDirections.toTopHeadLinesFragment()
             )
-      //  }
+        )
+
     }
 
 }
