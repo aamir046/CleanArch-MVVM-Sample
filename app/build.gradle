@@ -10,12 +10,12 @@ plugins {
 apply from: '../dependencies.gradle'
 
 android {
-    compileSdk 32
-
+    compileSdk 34
+    namespace "com.example.mvvmclean"
     defaultConfig {
         applicationId "com.example.mvvmclean"
         minSdk 21
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -23,8 +23,9 @@ android {
     }
 
     buildFeatures {
-        dataBinding true
+        dataBinding = true
     }
+
 
     buildTypes {
         release {
@@ -33,17 +34,19 @@ android {
         }
 
         debug {
-            buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
-            buildConfigField("String", "BASE_URL_DEBUG", "\"${BASE_URL_DEBUG}\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -76,9 +79,6 @@ dependencies {
     //DI Hilt
     implementation hilt.hiltAndroid
     kapt hilt.kaptHiltAndroidCompiler
-
-    //For Hilt support for ViewModel
-    implementation hilt.hiltViewModel
     kapt hilt.kaptHiltCompiler
 
     //Coroutines
@@ -103,4 +103,10 @@ dependencies {
     testImplementation testing.unitTestingCoroutines
     androidTestImplementation  testing.uiTestingJunit
     androidTestImplementation testing.uiTestingEspresso
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }

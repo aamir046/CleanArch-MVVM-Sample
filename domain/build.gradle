@@ -9,11 +9,11 @@ plugins {
 apply from: '../dependencies.gradle'
 
 android {
-    compileSdk 32
-
+    compileSdk 34
+    namespace "com.example.mvvmclean.domain"
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
@@ -43,9 +43,9 @@ dependencies {
     implementation kotlin.kotlinxCoroutines
 
     //DI Hilt
-    implementation hilt.hiltAndroid
-    kapt hilt.kaptHiltAndroidCompiler
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-android-compiler:2.48'
 
     //Gson
-    implementation google.gson
+    implementation "com.google.code.gson:gson:2.10.1"
 }
